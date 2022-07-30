@@ -41,6 +41,7 @@
       "simple-import-sort/imports": "error",
       "unicorn/filename-case": "off",
       "unicorn/prevent-abbreviations" : "off",
-      "require-jsdoc": "off"
+      "require-jsdoc": "off",
+      "sonarjs/no-duplicate-string": "warn"
     }
   }
