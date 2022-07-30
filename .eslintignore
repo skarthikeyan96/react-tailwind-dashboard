@@ -1,0 +1,5 @@
+postcss.config.js
+next.config.js
+tailwind.config.js 
+*.test.tsx
+*.d.ts
