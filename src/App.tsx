@@ -4,10 +4,9 @@ import {
   PhoneIcon,
   SearchCircleIcon
 } from '@heroicons/react/outline';
-
-import Card from './components/Card';
-import Chart from './components/Chart';
-import TinyLineChart from './components/TinyLineChart';
+import Card from 'components/Card';
+import Chart from 'components/Chart';
+import TinyLineChart from 'components/TinyLineChart';
 
 const App = () => {
   const cardDetails = [
