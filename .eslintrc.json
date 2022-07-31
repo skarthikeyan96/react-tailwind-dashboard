@@ -35,13 +35,14 @@
       "simple-import-sort"
     ],
     "rules": {
-      "no-console": "error",
+      "no-console": "warn",
       "react/react-in-jsx-scope": "off",
       "react/prop-types": "off",
       "simple-import-sort/imports": "error",
       "unicorn/filename-case": "off",
       "unicorn/prevent-abbreviations" : "off",
       "require-jsdoc": "off",
-      "sonarjs/no-duplicate-string": "warn"
+      "sonarjs/no-duplicate-string": "warn",
+      "no-unused-vars" : "warn"
     }
   }

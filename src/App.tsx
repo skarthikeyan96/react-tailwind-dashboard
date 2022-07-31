@@ -5,7 +5,9 @@ import {
   SearchCircleIcon
 } from '@heroicons/react/outline';
 
-import Card from './components/card';
+import Card from './components/Card';
+import Chart from './components/Chart';
+import TinyLineChart from './components/TinyLineChart';
 
 const App = () => {
   const cardDetails = [
@@ -55,8 +57,8 @@ const App = () => {
   const renderProfileButtons = () => {
     return profileButtons.map((button, index) => {
       return (
-        <div key={index} className="flex items-center flex-col">
-          <div className="border-2 border-transparent p-4 rounded-full mr-4 bg-gray-100 text-center">
+        <div key={index} className="flex items-center flex-row md:flex-col">
+          <div className="border-2 border-transparent p-4 rounded-full bg-gray-100 text-center mr-2 md:mr-4">
             {getProfileIcon(button)}
           </div>
         </div>
@@ -115,17 +117,37 @@ const App = () => {
       );
     });
   };
+
   return (
-    <div className="m-4 grid grid-cols font-sans">
+    <div className="m-4 grid grid-cols font-sans ">
       <div className="m-4">
         <div className="p-8 border-b-2 border-gray-200 pl-0">
           <h1 className="font-bold text-4xl"> Dashboard </h1>
         </div>
-        <div className="flex flex-row">
-          <div className="basis-3/5 mr-8">
-            <div className="pt-8 grid grid-cols-4 gap-4">{renderCard()}</div>
+        <div className="flex flex-col md:flex-row">
+          <div className="basis-3/5 mr-0 md:mr-8">
+            <div className="pt-8 grid lg:grid-cols-4 gap-4 ">
+              {renderCard()}
+            </div>
+            <div className="pt-8">
+              <div className="border-2 border-gray-200 p-8 rounded-xl flex flex-row">
+                <TinyLineChart />
+              </div>
+            </div>
+            <div className="pt-8">
+              <div className="grid grid-rows-2 gap-4">
+                <div className="border-2 border-gray-200 p-8 rounded-xl flex flex-row">
+                  <Card title="total product" amount={1285} removeBorder />
+                  <Chart />
+                </div>
+                <div className="border-2 border-gray-200 p-8 rounded-xl flex flex-row">
+                  <Card title="total earning" amount={'$2685'} removeBorder />
+                  <Chart />
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="basis-2/5 pt-8 ">
+          <div className="basis-2/5 pt-8 mr-4">
             <div className="border-2 border-gray-200 p-8 rounded-xl flex flex-col">
               <div className="flex flex-col items-center justify-center">
                 <img
@@ -136,7 +158,6 @@ const App = () => {
                 <h4 className="font-semibold text-2xl"> Tasha Adler </h4>
                 <div className="flex mt-4">{renderProfileButtons()}</div>
               </div>
-
               <div className="pt-8">
                 <h1 className="font-bold"> Recent Activities </h1>
                 <p className="text-gray-500"> 20 Jan 2022 </p>
