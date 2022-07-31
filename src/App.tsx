@@ -100,7 +100,7 @@ const App = () => {
   const renderActivityDetails = () => {
     return activityDetails.map((activity, index) => {
       return (
-        <div className="flex mb-4 justify-between" key={index}>
+        <div className="flex mb-5 justify-between" key={index}>
           <div className="flex items-center">
             <img
               src={activity.profilePhoto}
@@ -119,23 +119,21 @@ const App = () => {
   };
 
   return (
-    <div className="m-4 grid grid-cols font-sans ">
+    <div className="m-4 grid font-sans">
       <div className="m-4">
         <div className="p-8 border-b-2 border-gray-200 pl-0">
           <h1 className="font-bold text-4xl"> Dashboard </h1>
         </div>
-        <div className="flex flex-col md:flex-row">
+        <div className="flex flex-col lg:flex-row">
           <div className="basis-3/5 mr-0 md:mr-8">
-            <div className="pt-8 grid lg:grid-cols-4 gap-4 ">
-              {renderCard()}
-            </div>
+            <div className="pt-8 grid lg:grid-cols-4 gap-4">{renderCard()}</div>
             <div className="pt-8">
               <div className="border-2 border-gray-200 p-8 rounded-xl flex flex-row">
                 <TinyLineChart />
               </div>
             </div>
             <div className="pt-8">
-              <div className="grid grid-rows-2 gap-4">
+              <div className="grid md:grid-cols-2 gap-4">
                 <div className="border-2 border-gray-200 p-8 rounded-xl flex flex-row">
                   <Card title="total product" amount={1285} removeBorder />
                   <Chart />
